@@ -17,7 +17,7 @@ public class MainActivity extends ListActivity implements ViewWeatherInterface,O
     List<WeatherDay> allDayForecast = new ArrayList<WeatherDay>();
     ModelWeatherInterface model;
 
-    ListAdapter adapter = new CustomWListAdapter(this, allDayForecast);
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class MainActivity extends ListActivity implements ViewWeatherInterface,O
         model.addObserver(this);
         model.collectData();
 
-
+        ArrayAdapter<WeatherDay> adapter = new CustomArrayAdapter(this,R.layout.item, allDayForecast);
 
         setListAdapter(adapter);
     }
