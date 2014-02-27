@@ -1,5 +1,7 @@
 package com.nikitin.parser;
 
+import android.util.Log;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -29,7 +31,9 @@ public abstract class BaseWeatherParser implements xmlParser {
         try {
             this.weatherUrl = new URL(weatherUrl);
         } catch (MalformedURLException e) {
+            Log.e("WEATHER_PARSER","Connection error");
             throw new RuntimeException(e);
+
         }
     }
 

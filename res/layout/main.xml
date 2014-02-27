@@ -5,11 +5,32 @@
               android:layout_height="fill_parent"
         >
 
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nodata"
+            android:id="@+id/dataTv"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:gravity="center"/>
+
     <ListView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@android:id/list"
-            android:layout_gravity="center"
             android:drawSelectorOnTop="false"/>
+
+    <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/updateBtn"
+                android:id="@+id/button"
+                android:layout_gravity="bottom"/>
+    </FrameLayout>
+
 </LinearLayout>
 

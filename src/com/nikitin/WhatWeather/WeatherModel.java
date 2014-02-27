@@ -68,20 +68,30 @@ public class WeatherModel implements ModelWeatherInterface {
     @Override
     public void collectData() {
 
+        allDaysData = new ArrayList<WeatherDay>();
+
         getForecast();
 
     }
 
     private void getForecast(){
 
+        try{
         XmlPullWeatherParser parser = new XmlPullWeatherParser(cityUrl);
 
         allDaysData = parser.parse();   //get all forecast
 
         //whatDate(allDaysData.get(3).getDay());
-        divideData();  //divide forecast for days
+        if(!allDaysData.isEmpty()){
+            divideData();  //divide forecast for days
+            notifyObservers();
+        }
+        else
+            Log.e("MODEL","CANT GET DATA");
+        }catch (Exception e){
+            //allDaysData = null;
+        }
 
-        notifyObservers();
     }
 
     public List<WeatherDay> getAllDaysData(){
@@ -177,6 +187,8 @@ public class WeatherModel implements ModelWeatherInterface {
                     break;
                 case AFTER_TOMORROW_DATE_TIME:
                     afterTomorrowDayData.add(weatherDay);
+                    break;
+                default:
                     break;
             }
         }

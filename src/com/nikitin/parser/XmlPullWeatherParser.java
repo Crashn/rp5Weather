@@ -1,5 +1,6 @@
 package com.nikitin.parser;
 
+import android.util.Log;
 import android.util.Xml;
 import com.nikitin.WhatWeather.WeatherDay;
 import org.xmlpull.v1.XmlPullParser;
@@ -85,7 +86,8 @@ public class XmlPullWeatherParser extends BaseWeatherParser {
                 eventType = parser.next();
             }
         } catch (Exception e){
-            throw new RuntimeException(e);
+            //throw new RuntimeException(e);
+            Log.e("WEATHER_PARSER","CANT PARSE XML");
         }
         return weatherDays;
     }
