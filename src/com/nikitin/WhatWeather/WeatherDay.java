@@ -5,7 +5,7 @@ public class WeatherDay {
       * one day in weather forecast
       */
     private String day;
-    private String city="Новосибирск"; //переместить в другое место. погода уже по определенному городу собирается.
+
     private int humidity;
     private int pressure;
     private String windDirection;
@@ -26,13 +26,6 @@ public class WeatherDay {
         this.day = day;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
 
     public int getHumidity() {
         return humidity;

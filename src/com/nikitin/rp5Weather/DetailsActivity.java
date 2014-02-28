@@ -37,11 +37,11 @@ public class DetailsActivity extends Activity {
         dayTimeTv.setText(getIntent().getIntExtra("dayTime",0) + " часов");
         tempTv.setText(getIntent().getDoubleExtra("temp",0.0) + " С, ");
         windTv.setText("Ветер "+getIntent().getStringExtra("windDirection") + " " +
-                getIntent().getDoubleExtra("windVelocity",0) + "м/с, ");
+                getIntent().getDoubleExtra("windVelocity",0) + "м/с ");
         cloudTv.setText(kindOfCloud(getIntent().getIntExtra("cloud",0)) + ", ");
         fallsTv.setText(kindOfFalls(getIntent().getDoubleExtra("falls",0),
-                                    getIntent().getDoubleExtra("drops",0)) + ", ");
-        pressureTv.setText("Давление " + getIntent().getIntExtra("pressure", 0) + " мм.р.ст, ");
+                                    getIntent().getDoubleExtra("drops",0)));
+        pressureTv.setText("Давление " + getIntent().getIntExtra("pressure", 0) + " мм.р.ст ");
 
 
     }

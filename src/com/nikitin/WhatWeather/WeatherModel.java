@@ -58,7 +58,7 @@ public class WeatherModel implements ModelWeatherInterface {
     public void notifyObservers() {
 
         for(ObserverWeatherInterface obs : observers){
-            //Log.i("WEATHER_MODEL","NOTIFY_Observers");
+
             obs.update();
 
         }
@@ -81,7 +81,7 @@ public class WeatherModel implements ModelWeatherInterface {
 
         allDaysData = parser.parse();   //get all forecast
 
-        //whatDate(allDaysData.get(3).getDay());
+
         if(!allDaysData.isEmpty()){
             divideData();  //divide forecast for days
             notifyObservers();
@@ -89,7 +89,7 @@ public class WeatherModel implements ModelWeatherInterface {
         else
             Log.e("MODEL","CANT GET DATA");
         }catch (Exception e){
-            //allDaysData = null;
+
         }
 
     }
@@ -142,22 +142,22 @@ public class WeatherModel implements ModelWeatherInterface {
         String tomorrow = dateFormat.format(cal2.getTime());
         String afterTomorrow = dateFormat.format(cal3.getTime());
 
-       //Log.i("DAY_FORMAT: ", today + "\n" + dayToCheck + "\ntomorrow: " + tomorrow + "\n afterTomorrow" + afterTomorrow);
+
 
         if(dayToCheck.equals(today)){
-         //   Log.i("DAY_FORMAT: ", " today");
+
             return TODAY_DATE_TIME;
         }
         else if(dayToCheck.equals(tomorrow)){
-          //  Log.i("DAY_FORMAT", " ***tomorrow***");
+
             return TOMORROW_DATE_TIME;
         }
         else if(dayToCheck.equals(afterTomorrow)){
-           // Log.i("DAY_FORMAT", " ***after tomorrow***");
+
             return AFTER_TOMORROW_DATE_TIME;
         }
         else{
-           // Log.i("DAY_FORMAT", "\nDAY1: " + today + "\nDAY2: " + dayToCheck + "\n");
+
         }
         return 4;
 

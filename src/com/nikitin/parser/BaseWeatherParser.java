@@ -20,8 +20,8 @@ public abstract class BaseWeatherParser implements xmlParser {
     static final String HUMIDITY = "humidity"; //81 ?
     static final String WIND_DIRECTION = "wind_direction"; // С-З
     static final String WIND_VELOCITY = "wind_velocity"; //2 (m/c)
-    static final String FALLS = "falls"; //0 ?
-    static final String DROPS = "drops"; //0  ?
+    static final String FALLS = "falls";
+    static final String DROPS = "drops";
     static final String END = "point";
 
     final URL weatherUrl;

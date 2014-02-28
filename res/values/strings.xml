@@ -4,4 +4,5 @@
     <string name="updateBtn">Обновить</string>
     <string name="nodata">Нет данных</string>
     <string name="spec_activity">Подробный прогноз</string>
+    <string name="city_weather">Погода в Новосибирске</string>
 </resources>
