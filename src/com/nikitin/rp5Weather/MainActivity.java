@@ -34,6 +34,18 @@ public class MainActivity extends ListActivity implements ViewWeatherInterface,O
         model = new WeatherModel();
         model.addObserver(this);
 
+        //catch screen rotate
+        if(allDayForecast.isEmpty()){
+            Object object =  getLastNonConfigurationInstance();
+
+            if(object !=null && object instanceof ArrayList){
+
+                allDayForecast = (ArrayList<WeatherDay>)object;
+                nodata.setVisibility(View.GONE);
+                display();
+            }
+        }
+
         View.OnClickListener onUpdateBntListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,8 +62,14 @@ public class MainActivity extends ListActivity implements ViewWeatherInterface,O
 
         updateButton.setOnClickListener(onUpdateBntListener);
 
+
+
     }
 
+    @Override
+    public Object onRetainNonConfigurationInstance() {
+        return allDayForecast;
+    }
 
 
     @Override
